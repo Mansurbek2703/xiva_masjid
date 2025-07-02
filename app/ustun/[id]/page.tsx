@@ -101,7 +101,7 @@ export default function ColumnPage({ params }: PageProps) {
                     <div className="col-span-1 bg-gray-50 p-2 border-r border-gray-300 text-center font-semibold">
                       1
                     </div>
-                    <div className="col-span-7 p-2 border-r border-gray-300 font-medium">Ustunning darxt navi</div>
+                    <div className="col-span-7 p-2 border-r border-gray-300 font-medium">Ustunning daraxt navi</div>
                     <div className="col-span-4 p-2 text-center">{column.ustunningDarxtNavi || "-"}</div>
                   </div>
 

@@ -82,20 +82,11 @@ Qo'shma loyiha doirasida O'zbekiston va Germaniya olimlari orasida seminarlar va
           </div>
         </section>
 
-        {/* Admin Panel Link */}
-        <div className="text-center mb-8">
-          <Link
-            href="/admin"
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
-          >
-            Ma'lumotlar kiritish paneli
-          </Link>
-        </div>
 
         {/* Columns Grid */}
         <section className="mb-12">
           <h3 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
-            Ustunlar ro'yxati ({columns.length})
+            Ro'yxatga olingan ustunlar soni 213 ta           {/* ({columns.length})*/}
           </h3>
           {columns.length > 0 ? (
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3">
@@ -113,12 +104,7 @@ Qo'shma loyiha doirasida O'zbekiston va Germaniya olimlari orasida seminarlar va
           ) : (
             <div className="text-center py-12 bg-white rounded-lg shadow-sm border border-blue-100">
               <p className="text-gray-600 mb-4">Ma'lumotlar yuklanmoqda...</p>
-              <Link
-                href="/admin"
-                className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                Admin panelga o'tish
-              </Link>
+
             </div>
           )}
         </section>
@@ -151,7 +137,7 @@ Qo'shma loyiha doirasida O'zbekiston va Germaniya olimlari orasida seminarlar va
       {/* Footer */}
       <footer className="bg-white border-t border-blue-100 mt-12">
         <div className="max-w-7xl mx-auto px-4 py-6 text-center text-gray-600">
-          <p>&copy; 2024 Xorazm Ma'mun akademiyasi. Barcha huquqlar himoyalangan.</p>
+          <p>&copy; 2025 Xorazm Ma'mun akademiyasi. Barcha huquqlar himoyalangan.</p>
         </div>
       </footer>
     </div>
