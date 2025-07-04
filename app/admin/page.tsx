@@ -408,7 +408,7 @@ export default function AdminPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Ustunning darxt navi</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Ustunning daraxt navi</label>
                       <input
                         type="text"
                         value={formData.ustunningDarxtNavi || ""}
@@ -450,10 +450,7 @@ export default function AdminPage() {
                         className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       >
                         <option value="">Bo'sh qoldirish</option>
-                        <option value="-">-</option>
-                        <option value="Ulangan">Ulangan</option>
-                        <option value="Ulanmagan">Ulanmagan</option>
-                        <option value="Qisman ulangan">Qisman ulangan</option>
+
                       </select>
                     </div>
 
@@ -590,6 +587,8 @@ export default function AdminPage() {
                         <option value="">Tanlang</option>
                         <option value="Yo'q">Yo'q</option>
                         <option value="Bor">Bor</option>
+                        <option value="Termitdan zaralangan">Termitdan zaralangan</option>
+
                       </select>
                     </div>
 
@@ -603,8 +602,9 @@ export default function AdminPage() {
                         className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       >
                         <option value="">Tanlang</option>
-                        <option value="yo'q">yo'q</option>
+                        <option value="Ustaning nomi yozilgan">Ustaning nomi yozilgan</option>
                         <option value="Ustunda yozuv bor">Ustunda yozuv bor</option>
+                        <option value="Yozuv arab alifbosida ustun tanasiga o’yib yozilgan">Yozuv arab alifbosida ustun tanasiga o’yib yozilgan</option>
                         <option value="Yozuv ustun tanasiga o’yib yozilgan">Yozuv ustun tanasiga o’yib yozilgan</option>
                       </select>
                     </div>
