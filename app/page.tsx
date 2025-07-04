@@ -5,6 +5,8 @@ import Image from "next/image"
 import { useState, useEffect } from "react"
 import { ChevronDown, ChevronUp } from "lucide-react"
 import type { ColumnData } from "@/lib/database"
+import AnimatedPatterns from "@/components/animated-patterns"
+import ThemeToggle from "@/components/theme-toggle"
 
 export default function HomePage() {
   const [showFullText, setShowFullText] = useState(false)
@@ -42,104 +44,123 @@ Qo'shma loyiha doirasida O'zbekiston va Germaniya olimlari orasida seminarlar va
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <h1 className="text-2xl font-bold text-gray-800">Ma'lumotlar yuklanmoqda...</h1>
+      <div className="min-h-screen bg-gradient-enhanced relative overflow-hidden">
+        <AnimatedPatterns />
+        <ThemeToggle />
+        <div className="relative z-10 flex items-center justify-center min-h-screen">
+          <div className="text-center glass-morphism rounded-2xl p-8 shadow-enhanced">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 dark:border-emerald-400 mx-auto mb-4"></div>
+            <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100">Ma'lumotlar yuklanmoqda...</h1>
+          </div>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50">
-      {/* Header */}
-      <header className="bg-gray-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 py-6 text-center">
-          <h1 className="text-2xl md:text-3xl font-bold mb-2">
-            O'ZBEKISTON RESPUBLIKASI FANLAR AKADEMIYASI – XORAZM MA'MUN AKADEMIYASI
-          </h1>
-          <p className="text-lg md:text-xl">G.S. Durdiyeva A.K.Zargarov B.Xudayberganov N.Zargarova</p>
-        </div>
-      </header>
+    <div className="min-h-screen bg-gradient-enhanced relative overflow-hidden">
+      <AnimatedPatterns />
+      <ThemeToggle />
 
-      <main className="max-w-7xl mx-auto px-4 py-8">
-        {/* Main Title and Image */}
-        <section className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-            XIVA SHAHRIDAGI JUMA MASJIDNING YOG'OCH USTUNLARI BO'YICHA MA'LUMOTLAR BAZASI
-          </h2>
-
-          <div className="relative w-full max-w-4xl mx-auto mb-8">
-            <Image
-              src="/images/mosque-interior.jpg"
-              alt="Juma masjidi ichki ko'rinishi"
-              width={1200}
-              height={600}
-              className="rounded-lg shadow-lg w-full h-auto"
-              priority
-            />
+      <div className="relative z-10">
+        {/* Header */}
+        <header className="bg-gray-800 dark:bg-gray-900 text-white shadow-enhanced">
+          <div className="max-w-7xl mx-auto px-4 py-8 text-center">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-tight">
+              O'ZBEKISTON RESPUBLIKASI FANLAR AKADEMIYASI – XORAZM MA'MUN AKADEMIYASI
+            </h1>
+            <p className="text-lg md:text-xl text-gray-300 font-medium">
+              G.S. Durdiyeva A.K.Zargarov B.Xudayberganov N.Zargarova
+            </p>
           </div>
-        </section>
+        </header>
 
+        <main className="max-w-7xl mx-auto px-4 py-12">
+          {/* Main Title and Image */}
+          <section className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 dark:text-gray-100 mb-8 leading-tight">
+              XIVA SHAHRIDAGI JUMA MASJIDNING YOG'OCH USTUNLARI BO'YICHA MA'LUMOTLAR BAZASI
+            </h2>
 
-        {/* Columns Grid */}
-        <section className="mb-12">
-          <h3 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
-            Ro'yxatga olingan ustunlar soni 213 ta           {/* ({columns.length})*/}
-          </h3>
-          {columns.length > 0 ? (
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3">
-              {columns.map((column) => (
-                <Link
-                  key={column.id}
-                  href={`/ustun/${column.id}`}
-                  className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 p-3 border border-blue-100 hover:border-blue-200 text-center"
-                >
-                  <div className="font-semibold text-gray-800 text-sm">{column.title}</div>
-                  <div className="text-xs text-blue-600 mt-2">Ko'rish →</div>
-                </Link>
-              ))}
+            <div className="relative w-full max-w-5xl mx-auto mb-10">
+              <div className="glass-morphism rounded-2xl p-4 shadow-enhanced">
+                <Image
+                  src="/images/mosque-interior.jpg"
+                  alt="Juma masjidi ichki ko'rinishi"
+                  width={1200}
+                  height={600}
+                  className="rounded-xl shadow-lg w-full h-auto"
+                  priority
+                />
+              </div>
             </div>
-          ) : (
-            <div className="text-center py-12 bg-white rounded-lg shadow-sm border border-blue-100">
-              <p className="text-gray-600 mb-4">Ma'lumotlar yuklanmoqda...</p>
+          </section>
 
-            </div>
-          )}
-        </section>
 
-        {/* Project Description */}
-        <section className="bg-white rounded-lg shadow-sm p-6 border border-blue-100">
-          <div className="prose max-w-none text-gray-700 leading-relaxed">
-            <p className="text-justify">{showFullText ? fullText : shortText}</p>
 
-            <button
-              onClick={() => setShowFullText(!showFullText)}
-              className="mt-4 inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
-            >
-              {showFullText ? (
-                <>
-                  <ChevronUp className="w-4 h-4 mr-2" />
-                  Qisqartirish
-                </>
+          {/* Columns Grid */}
+          <section className="mb-16">
+            <div className="glass-morphism rounded-2xl p-8 shadow-enhanced">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-100 mb-8 text-center">
+                Ro'yxatga olingan ustunlar soni 213 ta {/* ({columns.length})*/}
+              </h3>
+              {columns.length > 0 ? (
+                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
+                  {columns.map((column) => (
+                    <Link
+                      key={column.id}
+                      href={`/ustun/${column.id}`}
+                      className="glass-morphism rounded-xl shadow-enhanced hover:shadow-xl transition-all duration-300 p-4 border border-blue-200/50 dark:border-emerald-400/30 hover:border-blue-300 dark:hover:border-emerald-400 text-center group transform hover:scale-105"
+                    >
+                      <div className="font-semibold text-gray-800 dark:text-gray-100 text-sm mb-2 group-hover:text-blue-600 dark:group-hover:text-emerald-400 transition-colors">
+                        {column.title}
+                      </div>
+                      <div className="text-xs text-blue-600 dark:text-emerald-400 font-medium">Ko'rish →</div>
+                    </Link>
+                  ))}
+                </div>
               ) : (
-                <>
-                  <ChevronDown className="w-4 h-4 mr-2" />
-                  Batafsil
-                </>
+                <div className="text-center py-16">
+                  <div className="glass-morphism rounded-xl p-8 shadow-enhanced">
+                    <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg">Ma'lumotlar yuklanmoqda...</p>
+                  </div>
+                </div>
               )}
-            </button>
-          </div>
-        </section>
-      </main>
+            </div>
+          </section>
 
-      {/* Footer */}
-      <footer className="bg-white border-t border-blue-100 mt-12">
-        <div className="max-w-7xl mx-auto px-4 py-6 text-center text-gray-600">
-          <p>&copy; 2025 Xorazm Ma'mun akademiyasi. Barcha huquqlar himoyalangan.</p>
-        </div>
-      </footer>
+          {/* Project Description */}
+          <section className="glass-morphism rounded-2xl p-8 shadow-enhanced">
+            <div className="prose max-w-none text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p className="text-justify text-lg leading-8">{showFullText ? fullText : shortText}</p>
+
+              <button
+                onClick={() => setShowFullText(!showFullText)}
+                className="mt-6 inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-emerald-600 dark:from-blue-500 dark:to-emerald-500 text-white rounded-xl hover:from-blue-700 hover:to-emerald-700 dark:hover:from-blue-600 dark:hover:to-emerald-600 transition-all duration-300 font-medium shadow-enhanced transform hover:scale-105"
+              >
+                {showFullText ? (
+                  <>
+                    <ChevronUp className="w-5 h-5 mr-2" />
+                    Qisqartirish
+                  </>
+                ) : (
+                  <>
+                    <ChevronDown className="w-5 h-5 mr-2" />
+                    Batafsil
+                  </>
+                )}
+              </button>
+            </div>
+          </section>
+        </main>
+
+        {/* Footer */}
+        <footer className="glass-morphism border-t border-blue-200/50 dark:border-emerald-400/30 mt-16">
+          <div className="max-w-7xl mx-auto px-4 py-8 text-center text-gray-600 dark:text-gray-400">
+            <p className="text-lg font-medium">&copy; 2025 Xorazm Ma'mun akademiyasi. Barcha huquqlar himoyalangan.</p>
+          </div>
+        </footer>
+      </div>
     </div>
   )
 }
