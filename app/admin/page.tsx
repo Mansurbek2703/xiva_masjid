@@ -1,4 +1,13 @@
+
+
+export default function AdminPage() {
+  return (
+    <>
+      {/*
+      <div>
+
 "use client"
+
 
 import type React from "react"
 import { useState, useEffect } from "react"
@@ -261,7 +270,7 @@ export default function AdminPage() {
           </div>
         </div>
 
-        {/* DOIMIY SAQLASH MA'LUMOTI */}
+
         <div className="mb-4 grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
             <h3 className="font-semibold text-blue-800">Jami ustunlar</h3>
@@ -286,7 +295,7 @@ export default function AdminPage() {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6">
-          {/* Ustunlar ro'yxati */}
+
           <div className="lg:col-span-1 bg-white rounded-lg shadow p-6">
             <h2 className="text-xl font-semibold mb-4">Ustunlar ro'yxati ({columns.length})</h2>
             <div className="space-y-2 max-h-96 overflow-y-auto">
@@ -326,7 +335,7 @@ export default function AdminPage() {
             </div>
           </div>
 
-          {/* Ma'lumot kiritish formasi */}
+
           <div className="lg:col-span-2 bg-white rounded-lg shadow p-6">
             {isEditing || isCreating ? (
               <div>
@@ -345,7 +354,7 @@ export default function AdminPage() {
                 </div>
 
                 <div className="grid md:grid-cols-4 gap-6">
-                  {/* Rasm yuklash */}
+
                   <div className="md:col-span-1">
                     <label className="block text-sm font-medium text-gray-700 mb-2">Ustun rasmi</label>
                     <div className="space-y-4">
@@ -382,7 +391,7 @@ export default function AdminPage() {
                     </div>
                   </div>
 
-                  {/* Ma'lumotlar */}
+
                   <div className="md:col-span-3 grid md:grid-cols-2 gap-4">
                     <div className="md:col-span-2">
                       <label className="block text-sm font-medium text-gray-700 mb-1">Ustun ID *</label>
@@ -656,5 +665,10 @@ export default function AdminPage() {
         </div>
       </div>
     </div>
+  )
+}
+</div>
+      */}
+    </>
   )
 }
